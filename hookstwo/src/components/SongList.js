@@ -1,4 +1,8 @@
 import React, {useState} from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
+// uuidv4();
+// const { v4: uuidv4 } = require('uuid');
 
 const SongList = () => {
     const [songs, setSongs] = useState([
@@ -10,7 +14,7 @@ const SongList = () => {
     ]);
 
     const addSong = () => {
-        setSongs([...songs, {title: 'new song', id: 5}])
+        setSongs([...songs, {title: 'new song', id: uuidv4()}])
     }
     return (
         <div className="song-list">
@@ -22,8 +26,9 @@ const SongList = () => {
         </div>
       );
 }
+
  
 export default SongList;
 
 
-// keys need to ne
+// keys need to be unique utilising uuid ensures that i need not have the same key or rather hard code it 
